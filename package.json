@@ -1,0 +1,35 @@
+{
+  "name": "ecommerce-website",
+  "version": "1.0.0",
+  "description": "Ecommerce website built with Express.js and MySQL",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaqilrk/ecommerce-website.git"
+  },
+  "keywords": [
+    "Ecommerce",
+    "Website",
+    "Express.js",
+    "MySQL"
+  ],
+  "author": "Aaqil Raj Krishna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaqilrk/ecommerce-website/issues"
+  },
+  "homepage": "https://github.com/aaqilrk/ecommerce-website#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
