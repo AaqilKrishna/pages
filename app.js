@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const sequelize = require('./config/sequelize');
 const host = process.env.HOST || 'localhost';
 const port = process.env.PORT || 3000;
 const expressLayouts = require('express-ejs-layouts');
@@ -27,6 +28,14 @@ app.set('layout extractScripts', true);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-app.listen(port, () => {
-  console.log(`Ecommerce app listening at http://${host}:${port}`);
-});
+// syncing schema and starting server 
+sequelize.sync()
+    .then(() => {
+        return console.log("Successfully connected to database");
+    })
+    .then(() => {
+        return app.listen(port, () => {
+          console.log(`Ecommerce app listening at http://${host}:${port}`);
+        });
+    })
+    .catch(err => console.log(err));
