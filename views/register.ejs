@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/css/register.css">
+<h1><%=title%></h1>
+
+<form action="/customer/create" method="post">
+    <input type="text" name="firstName" placeholder="First Name*" required>
+    <input type="text" name="lastName" placeholder="Last Name*" required>
+    <input type="email" name="email" placeholder="Email*" required>
+    <input type="tel" name="phoneNo" pattern="[0-9]{10}" placeholder="Phone No*" required>
+    <input type="password" name="password" placeholder="Password*" required>
+    <input type="password" name="confirmPassword" placeholder="Confirm Password*" required>
+    <input type="submit" value="Register">
+</form>

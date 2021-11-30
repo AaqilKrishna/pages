@@ -4,12 +4,15 @@ const app = express();
 const sequelize = require('./config/sequelize');
 const host = process.env.HOST || 'localhost';
 const port = process.env.PORT || 3000;
+const cookieParser = require('cookie-parser')
 const expressLayouts = require('express-ejs-layouts');
 
 // converting requests into standard datatypes 
 app.use(express.urlencoded({
     extended: true
 }));
+
+app.use(cookieParser());
 
 // set path for static files
 app.use(express.static('./assets'));
@@ -18,7 +21,7 @@ app.use(express.static('./assets'));
 app.use(expressLayouts);
 
 // set path for routes
-app.use('/', require('./routes/home'));
+app.use('/', require('./routes'));``
 
 // extract styles and scripts from partials and place it in layout
 app.set('layout extractStyles', true);
@@ -29,13 +32,15 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 // syncing schema and starting server 
-sequelize.sync()
+sequelize.sync({
+        alter: true
+    })
     .then(() => {
         return console.log("Successfully connected to database");
     })
     .then(() => {
         return app.listen(port, () => {
-          console.log(`Ecommerce app listening at http://${host}:${port}`);
+            console.log(`Ecommerce app listening at http://${host}:${port}`);
         });
     })
     .catch(err => console.log(err));

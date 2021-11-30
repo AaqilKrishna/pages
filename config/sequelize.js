@@ -7,7 +7,7 @@ const sequelize = new Sequelize(process.env.MYSQL_DATABASE, process.env.MYSQL_US
         freezeTableName: true,
         timestamps: false
     },
-    "logging": false,
+    // "logging": false,
 });
 
 module.exports = sequelize;
