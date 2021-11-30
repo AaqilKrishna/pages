@@ -1,3 +1,13 @@
 <header>
-    <a href="">Header</a>
+    <a href="">HEADER</a>
+    <ul>
+        <% if (locals.user) { %>
+        <li><%= user.firstName %></li>
+        <li><a href="/user/logout">Logout</a></li>
+        <% } else { %>
+        <li><a href="/user/login">Login</a></li>
+        <li><a href="/user/register">Register</a></li>
+        <% } %>
+    </ul>
+    <hr>
 </header>

@@ -4,12 +4,14 @@ const {
 const Customer = require('../models/customer');
 
 module.exports.login = (req, res) => {
+    if (req.isAuthenticated()) return res.redirect('/');
     return res.render('login', {
         title: "Login"
     });
 }
 
 module.exports.register = (req, res) => {
+    if (req.isAuthenticated()) return res.redirect('/');
     return res.render('register', {
         title: "Register"
     });
@@ -30,9 +32,8 @@ module.exports.create = (req, res) => {
                 ]
             }
         })
-        .then(data => {
-            console.log(req.body);
-            if (!data) {
+        .then(user => {
+            if (!user) {
                 return Customer.create(req.body)
                     .then(() => res.redirect('login'))
                     .catch(err => console.log(err));
@@ -42,3 +43,10 @@ module.exports.create = (req, res) => {
         })
         .catch(err => console.log(err));
 }
+
+module.exports.createSession = (req, res) => res.redirect('/');
+
+module.exports.destroySession = (req, res) => {
+    req.logout();
+    return res.redirect('/')
+};
