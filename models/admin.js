@@ -2,6 +2,7 @@ const {
     DataTypes
 } = require('sequelize');
 const sequelize = require('../config/sequelize');
+const Book = require('./book');
 
 const Admin = sequelize.define('admin', {
     id: {
@@ -39,5 +40,8 @@ const Admin = sequelize.define('admin', {
         }
     }
 });
+
+Admin.hasMany(Book);
+Book.belongsTo(Admin);
 
 module.exports = Admin;
