@@ -3,6 +3,7 @@ const {
 } = require('sequelize');
 const sequelize = require('../config/sequelize');
 const Order = require('./order');
+const Category = require('./category');
 
 const Book = sequelize.define('book', {
     ISBN: {
@@ -49,6 +50,10 @@ Book.hasMany(Order, {
 });
 
 Order.belongsTo(Book, {
+    foreignKey: 'ISBN'
+});
+
+Book.hasMany(Category, {
     foreignKey: 'ISBN'
 });
 
