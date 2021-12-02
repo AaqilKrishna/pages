@@ -16,13 +16,13 @@ const Order = sequelize.define('order', {
             notEmpty: true
         }
     },
-    paymentmode: {
+    paymentMode: {
         type: DataTypes.STRING
     },
-   paymentdate: {
+   paymentDate: {
         type: DataTypes.DATEONLY
     },
-    deliverydate: {
+    deliveryDate: {
         type: DataTypes.DATEONLY
     }
    
