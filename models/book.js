@@ -2,6 +2,7 @@ const {
     DataTypes
 } = require('sequelize');
 const sequelize = require('../config/sequelize');
+const Order = require('./order');
 
 const Book = sequelize.define('book', {
     ISBN: {
@@ -41,6 +42,14 @@ const Book = sequelize.define('book', {
     publisher: {
         type: DataTypes.STRING
     }
+});
+
+Book.hasMany(Order, {
+    foreignKey: 'ISBN'
+});
+
+Order.belongsTo(Book, {
+    foreignKey: 'ISBN'
 });
 
 module.exports = Book;
