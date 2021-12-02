@@ -4,6 +4,7 @@ const {
 const sequelize = require('../config/sequelize');
 const Order = require('./order');
 const Category = require('./category');
+const Author = require('./author');
 
 const Book = sequelize.define('book', {
     ISBN: {
@@ -54,7 +55,19 @@ Order.belongsTo(Book, {
 });
 
 Book.hasMany(Category, {
-    foreignKey: 'ISBN'
+    foreignKey: {
+        name: 'ISBN',
+        allowNull: false
+    }, 
+    onDelete: 'CASCADE'
+});
+
+Book.hasMany(Author, {
+    foreignKey: { 
+        name: 'ISBN',
+        allowNull: false
+    },
+    onDelete: 'CASCADE'
 });
 
 module.exports = Book;
