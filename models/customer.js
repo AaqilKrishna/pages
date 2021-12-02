@@ -2,6 +2,7 @@ const {
     DataTypes
 } = require('sequelize');
 const sequelize = require('../config/sequelize');
+const Order = require('./order');
 
 const Customer = sequelize.define('customer', {
     id: {
@@ -62,5 +63,8 @@ const Customer = sequelize.define('customer', {
         type: DataTypes.STRING
     }
 });
+
+Customer.hasMany(Order);
+Order.belongsTo(Customer);
 
 module.exports = Customer;

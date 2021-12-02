@@ -20,12 +20,14 @@ const Order = sequelize.define('order', {
         type: DataTypes.STRING
     },
    paymentdate: {
-        type: DataTypes.DATE
+        type: DataTypes.DATEONLY
     },
     deliverydate: {
-        type: DataTypes.DATE
+        type: DataTypes.DATEONLY
     }
    
 });
+
+
 
 module.exports = Order;
