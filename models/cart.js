@@ -9,6 +9,7 @@ const Cart = sequelize.define('cart', {
     quantity: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 1,
         validate : {
             notEmpty : true
         }

@@ -6,10 +6,7 @@ const sequelize = require('../config/sequelize');
 const Category = sequelize.define('category', {
     name: {
         type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true
-        }
+        primaryKey: true
     }
 });
 

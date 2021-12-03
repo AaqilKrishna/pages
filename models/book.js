@@ -36,7 +36,6 @@ const Book = sequelize.define('book', {
     quantity: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 0,
         validate: {
             notEmpty: true
         }
@@ -68,7 +67,7 @@ Order.belongsTo(Book, {
 Book.hasMany(Category, {
     foreignKey: {
         name: 'ISBN',
-        allowNull: false
+        primaryKey: true
     },
     onDelete: 'CASCADE'
 });
@@ -76,7 +75,7 @@ Book.hasMany(Category, {
 Book.hasMany(Author, {
     foreignKey: {
         name: 'ISBN',
-        allowNull: false
+        primaryKey: true
     },
     onDelete: 'CASCADE'
 });
