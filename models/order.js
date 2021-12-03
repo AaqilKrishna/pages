@@ -12,22 +12,21 @@ const Order = sequelize.define('order', {
     completion: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-        validate: {
-            notEmpty: true
-        }
+        defaultValue: false
     },
     paymentMode: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: 'Cash On Delivery'
     },
-   paymentDate: {
-        type: DataTypes.DATEONLY
+    paymentDate: {
+        type: DataTypes.DATEONLY,
+        allowNull: false,
+        defaultValue: DataTypes.NOW
     },
     deliveryDate: {
         type: DataTypes.DATEONLY
     }
-   
 });
-
-
 
 module.exports = Order;

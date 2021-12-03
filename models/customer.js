@@ -64,7 +64,15 @@ const Customer = sequelize.define('customer', {
     }
 });
 
-Customer.hasMany(Order);
-Order.belongsTo(Customer);
+Customer.hasMany(Order, {
+    foreignKey: {
+        allowNull: false
+    }
+});
+Order.belongsTo(Customer, {
+    foreignKey: {
+        allowNull: false
+    }
+});
 
 module.exports = Customer;
