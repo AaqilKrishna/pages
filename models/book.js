@@ -29,7 +29,9 @@ const Book = sequelize.define('book', {
         type: DataTypes.INTEGER
     },
     discount: {
-        type: DataTypes.DECIMAL(4, 2)
+        type: DataTypes.DECIMAL(4, 2),
+        allowNull: false,
+        defaultValue: 0.00
     },
     quantity: {
         type: DataTypes.INTEGER,
@@ -39,7 +41,9 @@ const Book = sequelize.define('book', {
         }
     },
     type: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: 'Paperback'
     },
     publisher: {
         type: DataTypes.STRING
@@ -47,25 +51,31 @@ const Book = sequelize.define('book', {
 });
 
 Book.hasMany(Order, {
-    foreignKey: 'ISBN'
+    foreignKey: {
+        name: 'ISBN',
+        allowNull: false
+    }
 });
 
 Order.belongsTo(Book, {
-    foreignKey: 'ISBN'
+    foreignKey: {
+        name: 'ISBN',
+        allowNull: false
+    }
 });
 
 Book.hasMany(Category, {
     foreignKey: {
         name: 'ISBN',
-        allowNull: false
-    }, 
+        primaryKey: true
+    },
     onDelete: 'CASCADE'
 });
 
 Book.hasMany(Author, {
-    foreignKey: { 
+    foreignKey: {
         name: 'ISBN',
-        allowNull: false
+        primaryKey: true
     },
     onDelete: 'CASCADE'
 });

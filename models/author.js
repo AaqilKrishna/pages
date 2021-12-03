@@ -6,10 +6,7 @@ const sequelize = require('../config/sequelize');
 const Author = sequelize.define('author', {
     name: {
         type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true
-        }
+        primaryKey: true
     }
 });
 
