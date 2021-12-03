@@ -1,8 +1,25 @@
 <link rel="stylesheet" href="/css/login.css">
-<h1><%=title%></h1>
 
-<form action="/user/create-session" method="post">
-    <input type="email" name="email" placeholder="Email*" required>
-    <input type="password" name="password" placeholder="Password*" required>
-    <input type="submit" value="Login">
-</form>
+<div class="center">
+    <h1>Login</h1>
+    <form action="/user/create-session" method="post">
+
+        <div class="txt_field">
+            <input type="email" name="email" required>
+            <span></span>
+            <label>Email</label>
+        </div>
+
+        <div class="txt_field">
+            <input type="password" name="password" required>
+            <span></span>
+            <label>Password</label>
+        </div>
+
+        <input type="submit" value="Login">
+        <div class="reg">
+            Not a member? <a href="/user/register">Register</a>
+        </div>
+
+    </form>
+</div>
