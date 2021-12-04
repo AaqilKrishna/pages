@@ -4,4 +4,27 @@
 
 <h1><%=title%></h1>
 
+<div id="books-list-container">
+    <ul>
+        <% for(book of books) { %>
+        <li>
+            <%= book.title %>
+            <%= book.price %>
+            <%= book.noOfPages %>
+            <%= book.discount %>
+            <%= book.type %>
+            <%= book.publisher %>
+
+            <% for(author of book.authorList) { %>
+            <%= author.name %>
+            <% } %>
+
+            <% for(category of book.categoryList) { %>
+            <%= category.name %>
+            <% } %>
+        </li>
+        <% } %>
+    </ul>
+</div>
+
 <%- include('_footer'); %>
