@@ -10,11 +10,54 @@
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
     <%- style %>
 </head>
 
 <body>
     <%- body %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+    <% if(flash.success && flash.success.length > 0) { %>
+    <script src='/js/flashMessages.js'></script>
+    <script>
+        new Noty({
+            theme: 'bootstrap-v4',
+            text: '<%= flash.success %>',
+            type: 'success',
+            layout: 'topRight',
+            timeout: 2000,
+            progressBar: false
+        }).show();
+    </script>
+    <% } %>
+
+    <% if(flash.error && flash.error.length > 0) { %>
+    <script>
+        new Noty({
+            theme: 'bootstrap-v4',
+            text: '<%= flash.error %>',
+            type: 'error',
+            layout: 'topRight',
+            timeout: 2000,
+            progressBar: false
+        }).show();
+    </script>
+    <% } %>
+
+    <% if(flash.info && flash.info.length > 0) { %>
+    <script>
+        new Noty({
+            theme: 'bootstrap-v4',
+            text: '<%= flash.info %>',
+            type: 'info',
+            layout: 'topRight',
+            timeout: 2000,
+            progressBar: false
+        }).show();
+    </script>
+    <% } %>
 
     <%- script %>
 </body>

@@ -9,7 +9,9 @@ const expressLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const passport = require('passport');
-const passportLocal = require('./config/passportLocalStrategy');
+const passportLocal = require('./middleware/passportLocalStrategy');
+const flash = require('connect-flash');
+const customFlash = require('./middleware/flash');
 
 // converting requests into json format 
 app.use(express.urlencoded({
@@ -54,6 +56,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+
+app.use(flash());
+app.use(customFlash.setFlash);
 
 // set path for routes
 app.use('/', require('./routes'));
