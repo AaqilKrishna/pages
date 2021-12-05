@@ -47,6 +47,13 @@ const Book = sequelize.define('book', {
     },
     publisher: {
         type: DataTypes.STRING
+    },
+    image: {
+        type: DataTypes.STRING,
+        // allowNull: false,
+        // validate: {
+        //     notEmpty: true
+        // }
     }
 });
 

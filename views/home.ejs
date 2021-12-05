@@ -8,6 +8,7 @@
     <ul>
         <% for(book of books) { %>
         <li>
+            <img src="<%= book.image %>" alt="<%= book.title %>" width="165">
             <%= book.title %>
             <%= book.price %>
             <%= book.noOfPages %>
