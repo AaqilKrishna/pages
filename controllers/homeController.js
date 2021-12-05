@@ -7,7 +7,7 @@ const BookAuthor = require('../models/author');
 
 module.exports.home = (req, res) => {
     Book.findAll({
-            attributes: ['ISBN', 'title', 'price', 'noOfPages', 'discount', 'type', 'publisher'],
+            attributes: ['ISBN', 'title', 'price', 'noOfPages', 'discount', 'type', 'publisher', 'image'],
             raw: true
         })
         .then(async books => {
