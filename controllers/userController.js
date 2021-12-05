@@ -17,36 +17,55 @@ module.exports.register = (req, res) => {
     });
 }
 
-module.exports.create = (req, res) => {
-    if (req.body.password !== req.body.confirmPassword)
+module.exports.create = async (req, res) => {
+    if (req.body.password !== req.body.confirmPassword) {
+        req.flash('error', 'Password Mismatch');
         return res.redirect('back');
+    }
 
-    Customer.findOne({
+    await Customer.findOne({
             where: {
-                [Op.or]: [{
-                        email: req.body.email
-                    },
-                    {
-                        phoneNo: req.body.phoneNo
-                    }
-                ]
-            }
+                email: req.body.email
+            },
+            raw: true
         })
         .then(user => {
-            if (!user) {
-                return Customer.create(req.body)
-                    .then(() => res.redirect('login'))
-                    .catch(err => console.log(err));
+            if (user) {
+                req.flash('error', 'Email already exists');
+                return res.redirect('back');
             }
-            console.log("email or phoneNo already exists");
-            return res.redirect('back');
+        })
+        .catch(err => console.log(err));
+
+    await Customer.findOne({
+            where: {
+                phoneNo: req.body.phoneNo
+            },
+            raw: true
+        })
+        .then(user => {
+            if (user) {
+                req.flash('error', 'Phone No already exists');
+                return res.redirect('back');
+            }
+        })
+        .catch(err => console.log(err));
+
+    return Customer.create(req.body)
+        .then(() => {
+            req.flash('success', 'Registered');
+            return res.redirect('login');
         })
         .catch(err => console.log(err));
 }
 
-module.exports.createSession = (req, res) => res.redirect('/');
+module.exports.createSession = (req, res) => {
+    req.flash('success', 'Logged In');
+    return res.redirect('/');
+};
 
 module.exports.destroySession = (req, res) => {
     req.logout();
+    req.flash('success', 'Logged Out');
     return res.redirect('/')
 };
