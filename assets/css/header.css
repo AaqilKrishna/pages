@@ -1,0 +1,87 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 9;
+}
+
+.nav{
+    padding: 10px 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand-logo{
+    height: 60px;
+}
+
+.nav-items{
+    display: flex;
+    align-items: center;
+}
+.nav > div a{
+display: flex;
+justify-content: space-around;
+ font-family: Arial, Helvetica, sans-serif;
+text-decoration: none;
+/*color: whitE;*/
+font-size: 17px;
+}
+.nav > div a img{
+padding: 0 15px;
+}
+.search{
+    width: 500px;
+    display: flex;
+}
+
+.search-box{
+    width: 70%;
+    height: 30px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #d1d1d1;
+    text-transform: capitalize;
+    background: none;
+    color: #a9a9a9;
+    outline: none;
+}
+
+.search-btn{
+    width: 20%;
+    height: 30px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: yellow;
+    color: #000;
+    text-transform: capitalize;
+    font-size: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.search-box::placeholder{
+    color: #a9a9a9;
+}
+
+.nav-items a{
+  
+  margin-left: 20px;
+}
+.nav-items a :hover {
+  border-color: #fff;
+
+  transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+}
+
+img.brand-logo {
+	height: 57px;
+}
+.nav a img{
+height: 25px;
+}

@@ -1,13 +1,27 @@
 <header>
-    <a href="">HEADER</a>
-    <ul>
-        <% if (locals.user) { %>
-        <li><%= user.firstName %></li>
-        <li><a href="/user/logout">Logout</a></li>
-        <% } else { %>
-        <li><a href="/user/login">Login</a></li>
-        <li><a href="/user/register">Register</a></li>
-        <% } %>
-    </ul>
-    <hr>
+    <nav class="navbar">
+        <div class="nav">
+            LOGO
+            <div class="nav-items">
+                <div>
+                    <ul>
+                        <% if (locals.user) { %>
+                        <li><%= user.firstName %></li>
+                        <li><a href="/user/logout">Logout</a></li>
+                        <% } else { %>
+                        <li><a href="/user/login">Login</a></li>
+                        <li><a href="/user/register">Register</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+
+                <div class="search">
+                    <input type="text" class="search-box" placeholder="search bookname">
+                    <button class="search-btn">search</button>
+                </div>
+                <div><a href="#">PROFILE</a></div>
+                <div><a href="#">CART</a></div>
+            </div>
+        </div>
+    </nav>
 </header>
