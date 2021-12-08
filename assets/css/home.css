@@ -1,8 +1,13 @@
+header {
+    position: fixed;
+}
+
 #books-list-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     background-color: #f1f3f6;
     padding: 3%;
+    padding-top: 100px;
 }
 
 .book-container {
@@ -30,7 +35,7 @@ img.book-image {
     height: 110px;
 }
 
-div.book-info-container > p {
+div.book-info-container>p {
     margin-top: 4px;
 }
 
@@ -51,7 +56,7 @@ div.book-info-container > p {
 }
 
 .book-discount-price {
-    color: #2e3292;
+    color: #b12704;
     font-size: 20px;
     font-weight: 600;
     line-height: 36px;
