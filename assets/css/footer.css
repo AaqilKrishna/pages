@@ -3,22 +3,18 @@ footer {
     justify-content: space-around;
     align-items: center;
     padding: 40px 0px;
-    background-color: #fff;
+    background-color: #232f3e;
+    color: white;
 }
 
 footer div {
-    height: 230px;
+    height: 180px;
 }
 
 footer div h3 {
     text-transform: uppercase;
-    color: blue;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-footer div h3:hover {
-    text-decoration: underline;
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
 footer div ul {
@@ -29,17 +25,9 @@ footer div ul li {
     padding: 4px 0px;
     font-size: 16px;
     font-weight: 600;
-    color: rgb(138, 133, 133);
 }
 
 footer div ul li:hover {
-    color: #00b5c3;
-    color: rgba(255, 43, 74, 0.8);
+    text-decoration: underline;
     cursor: pointer;
-}
-
-footer div img {
-    height: 35px;
-    margin-right: 7px;
-    margin-top: 10px;
 }
