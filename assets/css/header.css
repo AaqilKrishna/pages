@@ -1,87 +1,80 @@
-.navbar{
-    position: sticky;
-    top: 0;
-    left: 0;
+header {
+    background-color: #131921;
+    padding: 0px 15px;
     width: 100%;
-    background: #fff;
-    z-index: 9;
+    padding: 5px;
 }
 
-.nav{
-    padding: 10px 10vw;
+header nav {
+    display: grid;
+    grid-template-columns: 25% 45% 30%;
+    list-style-type: none;
+}
+
+header nav ul {
     display: flex;
-    justify-content: space-between;
-}
-
-.brand-logo{
-    height: 60px;
-}
-
-.nav-items{
-    display: flex;
+    justify-content: space-around;
     align-items: center;
-}
-.nav > div a{
-display: flex;
-justify-content: space-around;
- font-family: Arial, Helvetica, sans-serif;
-text-decoration: none;
-/*color: whitE;*/
-font-size: 17px;
-}
-.nav > div a img{
-padding: 0 15px;
-}
-.search{
-    width: 500px;
-    display: flex;
+    list-style-type: none;
 }
 
-.search-box{
-    width: 70%;
-    height: 30px;
+header nav ul li {
+    border: 1px solid #131921;
+    padding: 5px;
+    transition: all 0.2s ease 0s;
+}
+
+header nav ul li:hover {
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav-links {
+    color: white;
+    font-size: 18px;
+}
+
+#search-form {
+    display: grid;
+    grid-template-columns: 12fr 1fr;
+    border-radius: 5px;
+    background-color: #f7a937;
+    height: 38px;
+    margin: auto;
+    width: 100%;
+}
+
+.search-bar {
     padding: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border: 1px solid #d1d1d1;
-    text-transform: capitalize;
-    background: none;
-    color: #a9a9a9;
-    outline: none;
-}
-
-.search-btn{
-    width: 20%;
-    height: 30px;
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: yellow;
-    color: #000;
-    text-transform: capitalize;
+    border: 0;
+    border-radius: 5px 0px 0px 5px;
     font-size: 15px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
-.search-box::placeholder{
-    color: #a9a9a9;
+.search-button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
 }
 
-.nav-items a{
-  
-  margin-left: 20px;
-}
-.nav-items a :hover {
-  border-color: #fff;
-
-  transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+.fa-search {
+    display: inline-block;
+    margin: auto;
+    font-size: 21px;
+    color: #131921;
 }
 
-img.brand-logo {
-	height: 57px;
+.fa-map-marker-alt {
+    margin-right: 5px;
+    font-size: 14px;
 }
-.nav a img{
-height: 25px;
+
+.fa-shopping-cart {
+    padding-right: 10px;
+    font-size: 14px;
 }

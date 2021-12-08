@@ -1,27 +1,37 @@
 <header>
-    <nav class="navbar">
-        <div class="nav">
-            LOGO
-            <div class="nav-items">
-                <div>
-                    <ul>
-                        <% if (locals.user) { %>
-                        <li><%= user.firstName %></li>
-                        <li><a href="/user/logout">Logout</a></li>
-                        <% } else { %>
-                        <li><a href="/user/login">Login</a></li>
-                        <li><a href="/user/register">Register</a></li>
-                        <% } %>
-                    </ul>
-                </div>
-
-                <div class="search">
-                    <input type="text" class="search-box" placeholder="search bookname">
-                    <button class="search-btn">search</button>
-                </div>
-                <div><a href="#">PROFILE</a></div>
-                <div><a href="#">CART</a></div>
-            </div>
-        </div>
+    <nav>
+        <ul>
+            <a href="/" class="nav-links">
+                <li>
+                    <img class="logo" src="/images/logo.png" alt="logo">
+                </li>
+            </a>
+            <a href="#" class="nav-links">
+                <li>
+                    <i class="fal fa-map-marker-alt"></i>Select your address
+                </li>
+            </a>
+        </ul>
+        <form action="#" method="POST" id="search-form">
+            <input type="text" name="" id="" class="search-bar" placeholder="Search books by title, author, ISBN">
+            <button class="search-button"><i class="far fa-search"></i></button>
+        </form>
+        <ul>
+            <% if (locals.user) { %>
+            <a href="#" class="nav-links">
+                <li>Hello, <%= user.firstName %></li>
+            </a>
+            <% } else { %>
+            <a href="/user/login" class="nav-links">
+                <li>Hello, Sign in</li>
+            </a>
+            <% } %>
+            <a href="" class=" nav-links">
+                <li>Orders</li>
+            </a>
+            <a href="" class="nav-links">
+                <li><i class="fas fa-shopping-cart"></i>Cart</li>
+            </a>
+        </ul>
     </nav>
 </header>
