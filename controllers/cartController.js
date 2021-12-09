@@ -14,12 +14,16 @@ module.exports.cart = (req, res) => {
             raw: true
         })
         .then(async books => {
+            let cartTotalPrice = 0;
+            let cartQuantity = 0;
             for (let book of books) {
                 await Book.findByPk(book.ISBN, {
                         attributes: ['title', 'price', 'discount', 'type', 'image'],
                         raw: true
                     })
                     .then(bookData => {
+                        cartTotalPrice += parseFloat((bookData.price * (100 - bookData.discount) / 100) * book.quantity);
+                        cartQuantity += book.quantity;
                         book.title = bookData.title,
                             book.price = bookData.price,
                             book.discount = bookData.discount,
@@ -38,10 +42,11 @@ module.exports.cart = (req, res) => {
                     .then(authorList => book.authorList = authorList)
                     .catch(err => console.log(err));
             }
-
             return res.render('cart', {
                 title: "Cart",
-                books: books
+                books: books,
+                cartTotalPrice: cartTotalPrice,
+                cartQuantity: cartQuantity
             });
         })
         .catch(err => console.log(err));
@@ -129,5 +134,21 @@ module.exports.remove = (req, res) => {
                     .catch(err => console.log(err));
             }
         })
+        .catch(err => console.log(err));
+}
+
+module.exports.destroy = (req, res) => {
+    return Cart.destroy({
+            where: {
+                [Op.and]: [{
+                        customerId: req.user.id
+                    },
+                    {
+                        ISBN: req.query.ISBN
+                    }
+                ]
+            }
+        })
+        .then(() => res.redirect('back'))
         .catch(err => console.log(err));
 }

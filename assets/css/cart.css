@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 70% 30%;
     padding: 3%;
-    background-color: #f1f3f6;
+    margin-bottom: 200px;
 }
 
 .heading-container {
@@ -46,7 +46,7 @@ img.book-image {
 }
 
 div.book-info-container>p {
-    margin-top: 4px;
+    margin-top: 8px;
 }
 
 .book-title {
@@ -75,6 +75,102 @@ div.book-info-container>p {
     margin-right: 0px;
 }
 
-.fa-trash-alt {
+#empty-cart-container {
+    box-shadow: 0px 0px 2px rgb(238, 237, 237);
+    padding: 15px;
+    margin: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 210px;
+}
+
+#empty-cart-container span {
+    margin-left: auto;
+    display: block;
+    text-align: right;
+    color: #565959;
+    font-size: 16px;
+}
+
+#summary-container {
+    box-shadow: 0px 0px 2px rgb(238, 237, 237);
+    padding: 10px 15px;
+    margin: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+#summary-container p {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+#summary-container button {
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    padding: 9px 25px;
+    background-color: #ffd814;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-weight: 500;
+}
+
+#summary-container button:hover {
+    background-color: #e9c303;
+}
+
+#total-price {
+    font-weight: bold;
+}
+
+.quantity-container {
+    margin-top: 15px;
+    background-color: #f0f2f2;
+    display: inline-block;
+    border: 0.1px solid #b8b5b5;
+    border-radius: 4px;
+}
+
+.book-quantity {
+    background-color: white;
+    padding: 3px 13px;
+    border-left: 0.1px solid #b8b5b5;
+    border-right: 0.1px solid #b8b5b5;
+    color: #131921;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fa-minus,
+.fa-plus {
+    font-size: 15px;
+    padding: 5px 5px;
+    color: black;
+}
+
+.left-column {
+    display: grid;
+    grid-template-rows: 85% 15%;
+}
+
+.trash-icon {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    background-color: #eceff0;
+    font-size: 16px;
+    padding: 7px;
+    border-radius: 100%;
+    color: #484848;
+    transition: all 0.3s ease 0s;
+}
+
+.trash-icon:hover {
     color: red;
 }

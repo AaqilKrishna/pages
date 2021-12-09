@@ -5,7 +5,6 @@ header {
 #books-list-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: #f1f3f6;
     padding: 3%;
     padding-top: 100px;
 }
@@ -108,7 +107,8 @@ a.button-container:hover {
     opacity: 80%;
 }
 
-i.fas {
+.fa-cart-plus,
+.fa-check {
     margin: auto;
     display: block;
     display: inline;

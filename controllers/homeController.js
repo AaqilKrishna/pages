@@ -4,6 +4,7 @@ const {
 const Book = require('../models/book');
 const BookCategory = require('../models/category');
 const BookAuthor = require('../models/author');
+const Cart = require('../models/cart');
 
 module.exports.home = (req, res) => {
     Book.findAll({
@@ -30,6 +31,27 @@ module.exports.home = (req, res) => {
                         raw: true
                     })
                     .then(categoryList => book.categoryList = categoryList)
+                    .catch(err => console.log(err));
+
+                await Cart.findOne({
+                        where: {
+                            [Op.and]: [{
+                                    customerId: req.user.id
+                                },
+                                {
+                                    ISBN: book.ISBN
+                                }
+                            ]
+                        },
+                        raw: true
+                    })
+                    .then(cartInfo => {
+                        if (cartInfo == null)
+                            book.addedToCart = false;
+                        else
+                            book.addedToCart = true;
+
+                    })
                     .catch(err => console.log(err));
             }
             return books;
