@@ -2,6 +2,14 @@
 
 <%- include('_header'); %>
 <div id="cart">
+    <% if(books.length === 0) { %>
+    <div id="book-list-container">
+        <div class="heading-container">
+            <h1 class="title heading">Your Cart is empty.</h1>
+            <span class="price-heading">Price</span>
+        </div>
+    </div>
+    <% } else {%>
     <div id="books-list-container">
         <div class="heading-container">
             <h1 class="title heading">Shopping Cart</h1>
@@ -30,6 +38,7 @@
         </div>
         <% } %>
     </div>
+    <% } %>
     <div id="summary-container">
 
     </div>
