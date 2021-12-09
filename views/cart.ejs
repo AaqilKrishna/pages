@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="/css/cart.css">
+
+<%- include('_header'); %>
+<div id="cart">
+    <div id="book-list-container">
+        <% if(books.length === 0) { %>
+        <div class="heading-container">
+            <h1 class="title heading">Your Cart is empty.</h1>
+            <span class="price-heading">Price</span>
+        </div>
+        <div id="empty-cart-container">
+            <span>₹0.00</span>
+        </div>
+        <% } else {%>
+        <div id="books-list-container">
+            <div class="heading-container">
+                <h1 class="title heading">Shopping Cart</h1>
+                <span class="price-heading">Price</span>
+            </div>
+            <% for(book of books) { %>
+            <div class="book-container">
+                <a href="">
+                    <div class="book-image-container">
+                        <img src="<%= book.image %>" class="book-image">
+                    </div>
+                </a>
+
+                <div class="book-info-container">
+                    <a href="">
+                        <p class="book-title"><%= book.title %></p>
+                    </a>
+                    <p class="book-author">by
+                        <% for(author of book.authorList) { %>
+                        <%= author.name %>,
+                        <% } %>
+                    </p>
+                    <p><%= book.type %></p>
+                    <div class="quantity-container">
+                        <a href="/cart/remove/?ISBN=<%= book.ISBN %>"><i class="far fa-minus"></i></a>
+                        <span class="book-quantity"><%= book.quantity %></span>
+                        <a href="/cart/add/?ISBN=<%= book.ISBN %>"><i class="far fa-plus"></i></a>
+                    </div>
+                </div>
+                <div class="left-column">
+                    <p class="price-column">₹<%= (book.price * (100 - book.discount) / 100).toFixed(2) %></p>
+                    <a href="cart/destroy/?ISBN=<%= book.ISBN %>">
+                        <i class="far fa-trash-alt trash-icon"></i>
+                    </a>
+                </div>
+            </div>
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+    <div id="summary-container">
+        <p>Subtotal (<%= cartQuantity %> item): <span id="total-price">₹<%= (cartTotalPrice).toFixed(2) %></span></p>
+        <a href="#"><button>Proceed to Buy</button></a>
+    </div>
+</div>
+
+<%- include('_footer'); %>

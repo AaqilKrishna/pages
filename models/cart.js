@@ -9,16 +9,15 @@ const Cart = sequelize.define('cart', {
     quantity: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 1,
-        validate : {
-            notEmpty : true
+        validate: {
+            notEmpty: true
         }
     }
 });
 
 Cart.removeAttribute('id');
 
-Customer.belongsToMany(Book, { 
+Customer.belongsToMany(Book, {
     through: Cart,
     foreignKey: {
         name: 'customerId',
@@ -26,7 +25,7 @@ Customer.belongsToMany(Book, {
     }
 });
 
-Book.belongsToMany(Customer, { 
+Book.belongsToMany(Customer, {
     through: Cart,
     foreignKey: {
         name: 'ISBN',

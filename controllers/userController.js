@@ -17,46 +17,46 @@ module.exports.register = (req, res) => {
     });
 }
 
-module.exports.create = async (req, res) => {
+module.exports.create = (req, res) => {
     if (req.body.password !== req.body.confirmPassword) {
         req.flash('error', 'Password Mismatch');
         return res.redirect('back');
+    } else {
+        return Customer.findOne({
+                where: {
+                    email: req.body.email
+                },
+                raw: true
+            })
+            .then(user => {
+                if (user) {
+                    req.flash('error', 'Email already exists');
+                    return res.redirect('back');
+                } else {
+                    return Customer.findOne({
+                            where: {
+                                phoneNo: req.body.phoneNo
+                            },
+                            raw: true
+                        })
+                        .then(user => {
+                            if (user) {
+                                req.flash('error', 'Phone No already exists');
+                                return res.redirect('back');
+                            } else {
+                                return Customer.create(req.body)
+                                    .then(() => {
+                                        req.flash('success', 'Registered');
+                                        return res.redirect('login');
+                                    })
+                                    .catch(err => console.log(err));
+                            }
+                        })
+                        .catch(err => console.log(err));
+                }
+            })
+            .catch(err => console.log(err));
     }
-
-    await Customer.findOne({
-            where: {
-                email: req.body.email
-            },
-            raw: true
-        })
-        .then(user => {
-            if (user) {
-                req.flash('error', 'Email already exists');
-                return res.redirect('back');
-            }
-        })
-        .catch(err => console.log(err));
-
-    await Customer.findOne({
-            where: {
-                phoneNo: req.body.phoneNo
-            },
-            raw: true
-        })
-        .then(user => {
-            if (user) {
-                req.flash('error', 'Phone No already exists');
-                return res.redirect('back');
-            }
-        })
-        .catch(err => console.log(err));
-
-    return Customer.create(req.body)
-        .then(() => {
-            req.flash('success', 'Registered');
-            return res.redirect('login');
-        })
-        .catch(err => console.log(err));
 }
 
 module.exports.createSession = (req, res) => {
