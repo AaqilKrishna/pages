@@ -5,5 +5,6 @@ const passport = require('passport');
 
 router.get('/', cartController.cart);
 router.get('/add', cartController.add);
+router.get('/remove', cartController.remove);
 
 module.exports = router;

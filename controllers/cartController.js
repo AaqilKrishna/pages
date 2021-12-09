@@ -82,3 +82,52 @@ module.exports.add = (req, res) => {
         .then(() => res.redirect('back'))
         .catch(err => console.log(err));
 }
+
+module.exports.remove = (req, res) => {
+    Cart.findOne({
+            attributes: ['quantity'],
+            raw: true,
+            where: {
+                [Op.and]: [{
+                        customerId: req.user.id
+                    },
+                    {
+                        ISBN: req.query.ISBN
+                    }
+                ]
+            }
+        })
+        .then(cart => {
+            if (cart.quantity > 1) {
+                return Cart.decrement('quantity', {
+                        by: 1,
+                        where: {
+                            [Op.and]: [{
+                                    customerId: req.user.id
+                                },
+                                {
+                                    ISBN: req.query.ISBN
+                                }
+                            ]
+                        }
+                    })
+                    .then(() => res.redirect('back'))
+                    .catch(err => console.log(err));
+            } else {
+                return Cart.destroy({
+                        where: {
+                            [Op.and]: [{
+                                    customerId: req.user.id
+                                },
+                                {
+                                    ISBN: req.query.ISBN
+                                }
+                            ]
+                        }
+                    })
+                    .then(() => res.redirect('back'))
+                    .catch(err => console.log(err));
+            }
+        })
+        .catch(err => console.log(err));
+}

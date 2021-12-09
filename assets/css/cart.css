@@ -74,3 +74,7 @@ div.book-info-container>p {
     text-align: right;
     margin-right: 0px;
 }
+
+.fa-trash-alt {
+    color: red;
+}

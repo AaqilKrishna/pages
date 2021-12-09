@@ -33,6 +33,9 @@
                     <% } %>
                 </p>
                 <p><%= book.type %></p>
+                <a href="cart/remove/?ISBN=<%= book.ISBN %>" class="button-container">
+                    <i class="far fa-trash-alt"></i>
+                </a>
             </div>
             <p class="price-column">₹<%= parseInt(book.price * (100 - book.discount) / 100) %></p>
         </div>
