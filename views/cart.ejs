@@ -1,3 +1,38 @@
 <link rel="stylesheet" href="/css/cart.css">
 
 <%- include('_header'); %>
+<div id="cart">
+    <div id="books-list-container">
+        <div class="heading-container">
+            <h1 class="title heading">Shopping Cart</h1>
+            <span class="price-heading">Price</span>
+        </div>
+        <% for(book of books) { %>
+        <div class="book-container">
+            <a href="">
+                <div class="book-image-container">
+                    <img src="<%= book.image %>" class="book-image">
+                </div>
+            </a>
+
+            <div class="book-info-container">
+                <a href="">
+                    <p class="book-title"><%= book.title %></p>
+                </a>
+                <p class="book-author">by
+                    <% for(author of book.authorList) { %>
+                    <%= author.name %>,
+                    <% } %>
+                </p>
+                <p><%= book.type %></p>
+            </div>
+            <p class="price-column">₹<%= parseInt(book.price * (100 - book.discount) / 100) %></p>
+        </div>
+        <% } %>
+    </div>
+    <div id="summary-container">
+
+    </div>
+</div>
+
+<%- include('_footer'); %>

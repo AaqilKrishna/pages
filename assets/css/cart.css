@@ -1,0 +1,76 @@
+#cart {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 3%;
+    background-color: #f1f3f6;
+}
+
+.heading-container {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    box-shadow: 0px 0px 2px rgb(238, 237, 237);
+    padding: 10px 15px;
+    margin: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.title-heading {
+    display: block;
+}
+
+.price-heading {
+    display: inline-block;
+    text-align: right;
+    color: #565959;
+    margin-top: auto;
+    font-size: 16px;
+}
+
+.book-container {
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    box-shadow: 0px 0px 2px rgb(238, 237, 237);
+    padding: 15px;
+    margin: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+img.book-image {
+    display: block;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 180px;
+}
+
+div.book-info-container>p {
+    margin-top: 4px;
+}
+
+.book-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(47, 46, 65);
+}
+
+.book-author {
+    display: block;
+    width: 400px;
+    color: #939393;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.price-column {
+    color: #b12704;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 36px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 0px;
+}
