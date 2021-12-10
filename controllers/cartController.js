@@ -53,6 +53,7 @@ module.exports.cart = (req, res) => {
 }
 
 module.exports.add = (req, res) => {
+    req.flash('info', 'Added to cart');
     return Cart.findOrCreate({
             where: {
                 [Op.and]: [{
@@ -138,6 +139,7 @@ module.exports.remove = (req, res) => {
 }
 
 module.exports.destroy = (req, res) => {
+    req.flash('info', 'Removed from cart');
     return Cart.destroy({
             where: {
                 [Op.and]: [{
