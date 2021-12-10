@@ -53,7 +53,6 @@ module.exports.cart = (req, res) => {
 }
 
 module.exports.add = (req, res) => {
-    req.flash('info', 'Added to cart');
     return Cart.findOrCreate({
             where: {
                 [Op.and]: [{
@@ -103,7 +102,7 @@ module.exports.remove = (req, res) => {
                 ]
             }
         })
-        .then(cart => {
+        .then(async cart => {
             if (cart.quantity > 1) {
                 return Cart.decrement('quantity', {
                         by: 1,
@@ -120,6 +119,7 @@ module.exports.remove = (req, res) => {
                     .then(() => res.redirect('back'))
                     .catch(err => console.log(err));
             } else {
+                await req.flash('alert', 'Removed from cart');
                 return Cart.destroy({
                         where: {
                             [Op.and]: [{
@@ -139,7 +139,7 @@ module.exports.remove = (req, res) => {
 }
 
 module.exports.destroy = (req, res) => {
-    req.flash('info', 'Removed from cart');
+    req.flash('alert', 'Removed from cart');
     return Cart.destroy({
             where: {
                 [Op.and]: [{
