@@ -48,12 +48,12 @@
     </script>
     <% } %>
 
-    <% if(flash.info && flash.info.length > 0) { %>
+    <% if(flash.alert && flash.alert.length > 0) { %>
     <script>
         new Noty({
             theme: 'bootstrap-v4',
-            text: '<%= flash.info %>',
-            type: 'info',
+            text: '<%= flash.alert %>',
+            type: 'alert',
             layout: 'topRight',
             timeout: 2000,
             progressBar: false
