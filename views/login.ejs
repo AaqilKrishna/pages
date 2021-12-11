@@ -1,25 +1,17 @@
 <link rel="stylesheet" href="/css/login.css">
 
-<div class="center">
-    <h1>Login</h1>
+<a href="/"><img src="/images/logo-black.png" alt="logo" id="logo"></a>
+
+<div id="login-container">
+    <h1>Sign-In</h1>
     <form action="/user/create-session" method="post">
-
-        <div class="txt_field">
-            <input type="email" name="email" required>
-            <span></span>
-            <label>Email</label>
-        </div>
-
-        <div class="txt_field">
-            <input type="password" name="password" required>
-            <span></span>
-            <label>Password</label>
-        </div>
-
-        <input type="submit" value="Login">
-        <div class="reg">
-            Not a member? <a href="/user/register">Register</a>
-        </div>
-
+        <input type="email" name="email" required class="txt_field" placeholder="Email">
+        <input type="password" name="password" required class="txt_field" placeholder="Password">
+        <input type="submit" value="Sign-In">
     </form>
+</div>
+
+<div id="register-container">
+    <span>New to Pages?</span>
+    <a href="/user/register"><button>Create your Pages account</button></a>
 </div>
