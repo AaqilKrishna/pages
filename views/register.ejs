@@ -1,39 +1,21 @@
 <link rel="stylesheet" href="/css/register.css">
 
-<div class="center">
+<a href="/"><img src="/images/logo-black.png" alt="logo" id="logo"></a>
+
+<div id="register-container">
   <h1>Register</h1>
   <form action="/user/create" method="post">
-
-    <div class="txt_field">
-      <input type="text" name="firstName" placeholder="First Name" required>
-    </div>
-
-    <div class="txt_field">
-      <input type="text" name="lastName" placeholder="Last Name" required>
-    </div>
-
-    <div class="txt_field">
-      <input type="email" name="email" placeholder="Email" required>
-    </div>
-
-    <div class="txt_field">
-      <input type="tel" name="phoneNo" pattern="[0-9]{10}" placeholder="Phone No" required>
-    </div>
-
-    <div class="txt_field">
-      <input type="password" name="password" placeholder="Password" required>
-    </div>
-
-    <div class="txt_field">
-      <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
-    </div>
-
-    <div class="reg">
-      <input type="submit" value="Register">
-    </div>
-
-    <div class="reg">
-      Already a member? <a href="/user/login">Login</a>
-    </div>
+    <input type="text" name="firstName" placeholder="First Name" required>
+    <input type="text" name="lastName" placeholder="Last Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phoneNo" pattern="[0-9]{10}" placeholder="Phone No" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+    <input type="submit" value="Register">
   </form>
+</div>
+
+<div id="login-container">
+  <span>Already have an account?</span>
+  <a href="/user/login"><button>Sign in</button></a>
 </div>
