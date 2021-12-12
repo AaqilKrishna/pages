@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/book.css">
+
+<div id="books-list-container">
+    <% for(book of books) { %>
+    <div class="book-container">
+        <a href="">
+            <div class="book-image-container">
+                <img src="<%= book.image %>" class="book-image">
+            </div>
+        </a>
+
+        <div class="book-info-container">
+            <a href="">
+                <p class="book-title"><%= book.title %></p>
+            </a>
+            <p class="book-author">
+                <% for(author of book.authorList) { %>
+                <%= author.name %>,
+                <% } %>
+                <%= book.publisher %>
+            </p>
+            <p class="book-discount-price">₹<%= parseInt(book.price * (100 - book.discount) / 100) %></p>
+            <% if(book.discount > 0) { %>
+            <p class="book-original-price">₹<%= parseInt(book.price) %></p>
+            <p class="book-discount">(<%= parseInt(book.discount) %>% Off)</p>
+            <% } %>
+        </div>
+        <% if (book.addedToCart) { %>
+        <a href="cart" class="button-container">
+            <i class="far fa-check"></i>
+            <button class="cart-button">GO TO CART</button>
+        </a>
+        <% } else {%>
+        <a href="cart/add/?ISBN=<%= book.ISBN %>" class="button-container">
+            <i class="fas fa-cart-plus"></i>
+            <button class="cart-button">ADD TO CART</button>
+        </a>
+        <% } %>
+    </div>
+    <% } %>
+</div>
