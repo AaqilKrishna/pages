@@ -79,3 +79,8 @@ header nav ul li:hover {
     padding-right: 10px;
     font-size: 14px;
 }
+
+.fa-sign-out-alt {
+    color: white;
+    font-size: 16px;
+}
