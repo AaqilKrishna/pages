@@ -23,7 +23,9 @@
             <a href="#" class="nav-links">
                 <li>Hello, <%= user.firstName %></li>
             </a>
-            <li><a href="/user/sign-out"><i class="far fa-sign-out-alt"></i></a></li>
+            <a href="/user/sign-out">
+                <li><i class="far fa-sign-out-alt"></i></li>
+            </a>
             <% } else { %>
             <a href="/user/sign-in" class="nav-links">
                 <li>Hello, Sign in</li>
