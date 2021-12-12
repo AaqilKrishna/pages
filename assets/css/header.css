@@ -3,6 +3,7 @@ header {
     padding: 0px 15px;
     width: 100%;
     padding: 5px;
+    z-index: 1;
 }
 
 header nav {
