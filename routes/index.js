@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const homeController = require('../controllers/homeController');
+const bookController = require('../controllers/bookController');
 const passport = require('passport');
 
-router.get('/', homeController.home);
+router.get('/', bookController.book);
 router.use('/user', require('./user'));
 router.use('/admin', require('./admin'));
 router.use('/book', require('./book'));
