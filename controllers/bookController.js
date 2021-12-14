@@ -90,7 +90,6 @@ module.exports.bookSingle = (req, res) => {
             return book;
         })
         .then(book => {
-            console.log(book);
             return res.render('bookSingle', {
                 title: "Pages",
                 book: book
