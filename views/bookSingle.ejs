@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/bookSingle.css">
+
+<%- include('_header'); %>
+
+<img src="<%= book.image %>" alt="book-image">
+<p><%= book.ISBN %></p>
+<p><%= book.title %></p>
+<p><%= book.noOfPages %></p>
+<p><%= book.type %></p>
+<p><%= book.price %></p>
+<p><%= book.discount %></p>
+<p><%= book.publisher %></p>
+
+<% for (let author of book.authorList) { %>
+<p><%= author.name %></p>
+<% } %>
+
+<% for (let category of book.categoryList) { %>
+<p><%= category.name %></p>
+<% } %>
+
+<%- include('_footer'); %>
