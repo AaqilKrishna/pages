@@ -1,0 +1,231 @@
+.box .discount {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0, 255, 0, .1);
+    color: #b300fa;
+    padding: .7rem 1rem;
+    font-size: 2rem;
+}
+
+.box .icons {
+    position: absolute;
+    top: .5rem;
+    right: -6rem;
+}
+
+.box:hover .icons {
+    right: 1rem;
+}
+
+.box .icons a {
+    display: block;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 1.7rem;
+    color: #3ce708;
+    background: rgba(0, 0, 0, .05);
+    border-radius: 50%;
+    margin-top: .7rem;
+}
+
+.box .icons a:hover {
+    background: #b300fa;
+    color: #fff;
+}
+
+.box h3 {
+    color: #3ce708;
+    font-size: 2.5rem;
+}
+
+.box .price {
+    font-size: 2rem;
+    color: #333;
+    padding: .5rem 0;
+}
+
+.box .price p {
+    font-size: 0.7rem;
+    color: rgb(252, 7, 7);
+}
+
+.box .price span:first-child {
+    font-size: 1.5rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.box .price span {
+    font-size: 1rem;
+    color: rgb(0, 216, 29);
+}
+
+.box .btn {
+    display: inline;
+}
+
+
+.hero {
+    width: 100%;
+}
+
+.row {
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col {
+    flex-basis: 45%;
+}
+
+.slider {
+    height: 80vh;
+    display: flex;
+}
+
+.product img {
+    height: 19vh;
+    margin-bottom: 9px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.product img:hover {
+    opacity: 1;
+}
+
+.preview img {
+    height: 100%;
+}
+
+.book-single-p {
+    margin-bottom: 20px;
+}
+
+.brand {
+    background: #8beee9;
+    width: fit-content;
+    color: rgb(10, 10, 10);
+    font-size: 12px;
+    padding: 2px 5px;
+}
+
+.book-single-h2 {
+    font-size: 45px;
+    color: #2c2c54;
+    margin-bottom: 20px;
+}
+
+.rating {
+    display: flex;
+    height: 15px;
+}
+
+.rating .fas {
+    color: #fceb05;
+}
+
+.price {
+    color: #fe980f;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.book-single-input {
+    width: 30px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    text-align: center;
+}
+
+.book-single-btn {
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    background: #fe980f;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.book-single-btn .fa {
+    margin-right: 10px;
+}
+
+.related {
+    width: 90%;
+    margin: 0 auto 40px;
+}
+
+.related .row {
+    width: 100%;
+    height: auto;
+}
+
+.columns {
+    flex-basis: 22%;
+    height: 100%;
+}
+
+.items img {
+    width: 100%;
+}
+
+.details {
+    margin-top: 20px;
+}
+
+.details p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #0004fa;
+}
+
+.details .rating {
+    margin: 10px 0;
+}
+
+.book-single-btn {
+    background: #b300fa;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.book-single-btn:hover {
+    background: #3ce708;
+}
+
+.specification {
+    width: 90%;
+    margin: 0 auto 40px;
+}
+
+.specification ul {
+    margin-left: 30px;
+    line-height: 44px;
+}
+
+.specification p {
+    background: #fbf5e7;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 1.675;
+    letter-spacing: normal;
+}
+
+.specification h3 {
+    font-size: 30px;
+}

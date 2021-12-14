@@ -1,22 +1,69 @@
 <link rel="stylesheet" href="/css/bookSingle.css">
+<script src="/js/bookSingle.js"></script>
 
 <%- include('_header'); %>
+<div class="hero">
+    <div class="row">
+        <div class="col">
+            <div class="slider">
+                <div class="product">
+                    <img src="<%= book.image %>" alt="book-image" onclick="clickme(this)">
+                    <img src="<%= book.image %>" alt="book-image" onclick="clickme(this)">
+                </div>
+                <div class="preview">
+                    <img src="<%= book.image %>" alt="book-image" id="imagebox">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content">
+                <p class="brand book-single-p">Category: <% for (let category of book.categoryList) { %>
+                    <%= category.name %>
+                    <% } %> </p>
+                <h2 class="book-single-h2"><%= book.title %></h2>
+                <div class="box">
+                    <div class="price"> ₹<%= (book.price * (100 - book.discount) / 100).toFixed(2) %> <span>
+                            ₹<%= book.price %> </span> &nbsp; <span>(<%= book.discount %>% off)</span>
+                    </div>
+                </div>
 
-<img src="<%= book.image %>" alt="book-image">
-<p><%= book.ISBN %></p>
-<p><%= book.title %></p>
-<p><%= book.noOfPages %></p>
-<p><%= book.type %></p>
-<p><%= book.price %></p>
-<p><%= book.discount %></p>
-<p><%= book.publisher %></p>
+                <button class="book-single-btn" type="button">
+                    <i class="fa fa-shopping-cart"></i>
+                    Add to cart</button>
+                &nbsp;
+                <button class="book-single-btn" type="button">
+                    <i class="fa fa-shopping-bag"></i>
+                    Buy now</button>
+            </div>
 
-<% for (let author of book.authorList) { %>
-<p><%= author.name %></p>
-<% } %>
-
-<% for (let category of book.categoryList) { %>
-<p><%= category.name %></p>
-<% } %>
+        </div>
+    </div>
+    <div class="specification">
+        <h2 class="book-single-h2">Product specifications</h2>
+        <hr>
+        <h3>Description</h3>
+        <h3>About the Book: <%= book.title %></h3>
+        <p class="book-single-p">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque rem incidunt earum vitae accusantium
+            voluptatem explicabo commodi fugit. Fuga ex adipisci voluptatibus quod necessitatibus porro reiciendis autem
+            itaque? Deserunt nam cum natus iure minima.
+        </p>
+        <h3>About the Author: <% for (let author of book.authorList) { %>
+            <%= author.name %>
+            <% } %></h3>
+        <p class="book-single-p">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa voluptate magnam perferendis illum
+            quaerat, quas ratione veritatis facilis reiciendis repudiandae perspiciatis eveniet, esse obcaecati,
+            nesciunt cupiditate laboriosam aliquid iure. Quia adipisci molestias unde!
+        </p>
+        <hr>
+        <h3>Book specifications</h3>
+        <ul>
+            <li>ISBN: <%= book.ISBN %> </li>
+            <li>Binding: <%= book.type %></li>
+            <li>Publisher: <%= book.publisher %></li>
+        </ul>
+    </div>
+</div>
 
 <%- include('_footer'); %>
