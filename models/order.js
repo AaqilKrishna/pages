@@ -9,6 +9,11 @@ const Order = sequelize.define('order', {
         primaryKey: true,
         autoIncrement: true
     },
+    quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1
+    },
     completion: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
@@ -27,6 +32,8 @@ const Order = sequelize.define('order', {
     deliveryDate: {
         type: DataTypes.DATEONLY
     }
+}, {
+    initialAutoIncrement: 1000000,
 });
 
 module.exports = Order;
