@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/css/cart.css">
 
 <%- include('_header'); %>
+
 <div id="cart">
     <div id="book-list-container">
         <% if(books.length === 0) { %>
@@ -19,14 +20,14 @@
             </div>
             <% for(book of books) { %>
             <div class="book-container">
-                <a href="">
+                <a href="book/<%= book.ISBN %>">
                     <div class="book-image-container">
                         <img src="<%= book.image %>" class="book-image">
                     </div>
                 </a>
 
                 <div class="book-info-container">
-                    <a href="">
+                    <a href="book/<%= book.ISBN %>">
                         <p class="book-title"><%= book.title %></p>
                     </a>
                     <p class="book-author">by
@@ -54,7 +55,7 @@
     </div>
     <div id="summary-container">
         <p>Subtotal (<%= cartQuantity %> item): <span id="total-price">₹<%= (cartTotalPrice).toFixed(2) %></span></p>
-        <a href="#"><button>Proceed to Buy</button></a>
+        <a href="/order/orderAll"><button>Proceed to Buy</button></a>
     </div>
 </div>
 

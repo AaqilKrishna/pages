@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/order.css">
+
+<%- include('_header'); %>
+
+<div id="order">
+    <div id="order-list-container">
+
+        <% if(orders.length === 0) { %>
+        <div class="heading-container">
+            <h1 class="title heading">Orders</h1>
+            <span class="price-heading">Id</span>
+        </div>
+        <div id="empty-order-container">
+        </div>
+
+        <% } else {%>
+        <div class="heading-container">
+            <h1 class="title heading">Orders</h1>
+            <span class="price-heading">Id</span>
+        </div>
+        <% for(order of orders) { %>
+        <div class="order-container">
+            <a href="book/<%= order.ISBN %>">
+                <div class="order-image-container">
+                    <img src="<%= order.image %>" class="order-image">
+                </div>
+            </a>
+
+            <div class="order-info-container">
+                <a href="book/<%= order.ISBN %>">
+                    <p class="order-title"><%= order.title %></p>
+                </a>
+                <p>Quantity: <%= order.quantity %> </p>
+                <p>Total: ₹<%= order.price %> </p>
+                <p><%= order.paymentMode %> </p>
+                <p>Order Placed: <%= order.paymentDate %></p>
+            </div>
+            <div class="left-column">
+                <p class="price-column">#<%= order.id %></p>
+            </div>
+        </div>
+        <% } %>
+        <% } %>
+    </div>
+</div>
+
+<%- include('_footer'); %>

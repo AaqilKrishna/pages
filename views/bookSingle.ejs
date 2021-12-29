@@ -29,11 +29,13 @@
 
                 <button class="book-single-btn" type="button">
                     <i class="fa fa-shopping-cart"></i>
-                    Add to cart</button>
+                    <a href="/cart/add/?ISBN=<%= book.ISBN %>">Add to cart</a>
+                </button>
                 &nbsp;
                 <button class="book-single-btn" type="button">
                     <i class="fa fa-shopping-bag"></i>
-                    Buy now</button>
+                    <a href="/order/orderOne/?ISBN=<%= book.ISBN %>">Buy now</a>
+                </button>
             </div>
 
         </div>
@@ -41,22 +43,18 @@
     <div class="specification">
         <h2 class="book-single-h2">Product specifications</h2>
         <hr>
-        <h3>Description</h3>
-        <h3>About the Book: <%= book.title %></h3>
+        <h3>About the Book:</h3>
         <p class="book-single-p">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque rem incidunt earum vitae accusantium
             voluptatem explicabo commodi fugit. Fuga ex adipisci voluptatibus quod necessitatibus porro reiciendis autem
             itaque? Deserunt nam cum natus iure minima.
         </p>
-        <h3>About the Author: <% for (let author of book.authorList) { %>
-            <%= author.name %>
-            <% } %></h3>
+        <h3>About the Author:</h3>
         <p class="book-single-p">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa voluptate magnam perferendis illum
             quaerat, quas ratione veritatis facilis reiciendis repudiandae perspiciatis eveniet, esse obcaecati,
             nesciunt cupiditate laboriosam aliquid iure. Quia adipisci molestias unde!
         </p>
-        <hr>
         <h3>Book specifications</h3>
         <ul>
             <li>ISBN: <%= book.ISBN %> </li>
