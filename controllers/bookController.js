@@ -8,7 +8,7 @@ const BookAuthor = require('../models/author');
 
 module.exports.book = (req, res) => {
     Book.findAll({
-            attributes: ['ISBN', 'title', 'price', 'discount', 'publisher', 'image'],
+            attributes: ['ISBN', 'title', 'price', 'discount', 'publisher', 'frontImage'],
             raw: true
         })
         .then(async books => {
@@ -59,7 +59,7 @@ module.exports.book = (req, res) => {
 
 module.exports.bookSingle = (req, res) => {
     Book.findByPk(req.params.ISBN, {
-            attributes: ['ISBN', 'title', 'noOfPages', 'price', 'discount', 'type', 'publisher', 'image', ],
+            attributes: ['ISBN', 'title', 'noOfPages', 'price', 'discount', 'type', 'publisher', 'frontImage', 'backImage'],
             raw: true
         })
         .then(async book => {
@@ -91,7 +91,7 @@ module.exports.bookSingle = (req, res) => {
         })
         .then(book => {
             return res.render('bookSingle', {
-                title: "Pages",
+                title: "Book Page",
                 book: book
             });
         })

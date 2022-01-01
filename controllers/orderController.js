@@ -20,13 +20,13 @@ module.exports.order = (req, res) => {
 
             for (let order of orders) {
                 await Book.findByPk(order.ISBN, {
-                        attributes: ['title', 'price', 'discount', 'type', 'image'],
+                        attributes: ['title', 'price', 'discount', 'type', 'frontImage'],
                         raw: true
                     })
                     .then(bookData => {
                         order.title = bookData.title,
                             order.price = bookData.price * (100 - bookData.discount) / 100 * order.quantity,
-                            order.image = bookData.image
+                            order.frontImage = bookData.frontImage
                     })
                     .catch(err => console.log(err));
             }

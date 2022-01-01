@@ -48,12 +48,19 @@ const Book = sequelize.define('book', {
     publisher: {
         type: DataTypes.STRING
     },
-    image: {
+    frontImage: {
         type: DataTypes.STRING,
-        // allowNull: false,
-        // validate: {
-        //     notEmpty: true
-        // }
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
+    },
+    backImage: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
     }
 });
 

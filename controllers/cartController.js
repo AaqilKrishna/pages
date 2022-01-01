@@ -18,7 +18,7 @@ module.exports.cart = (req, res) => {
             let cartQuantity = 0;
             for (let book of books) {
                 await Book.findByPk(book.ISBN, {
-                        attributes: ['title', 'price', 'discount', 'type', 'image'],
+                        attributes: ['title', 'price', 'discount', 'type', 'frontImage'],
                         raw: true
                     })
                     .then(bookData => {
@@ -28,7 +28,7 @@ module.exports.cart = (req, res) => {
                             book.price = bookData.price,
                             book.discount = bookData.discount,
                             book.type = bookData.type,
-                            book.image = bookData.image
+                            book.frontImage = bookData.frontImage
                     })
                     .catch(err => console.log(err));
 

@@ -59,7 +59,7 @@
 
 .box .price span {
     font-size: 1rem;
-    color: rgb(0, 216, 29);
+    color: #27ae60;
 }
 
 .box .btn {
@@ -91,6 +91,7 @@
 
 .product img {
     height: 19vh;
+    width: 8vw;
     margin-bottom: 9px;
     cursor: pointer;
     opacity: 0.6;
@@ -109,16 +110,16 @@
 }
 
 .brand {
-    background: #8beee9;
+    background: #b9fffb;
     width: fit-content;
     color: rgb(10, 10, 10);
-    font-size: 12px;
+    font-size: 13px;
     padding: 2px 5px;
 }
 
 .book-single-h2 {
     font-size: 45px;
-    color: #2c2c54;
+    color: #2f2e41;
     margin-bottom: 20px;
 }
 
@@ -197,14 +198,15 @@
 }
 
 .book-single-btn {
-    background: #b300fa;
+    background-color: #f7a937;
     color: #fff;
     text-align: center;
     cursor: pointer;
 }
 
 .book-single-btn:hover {
-    background: #3ce708;
+    background-color: #f7a937;
+    opacity: 80%;
 }
 
 .specification {
