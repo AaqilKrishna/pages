@@ -9,15 +9,15 @@ https://user-images.githubusercontent.com/75661314/149398249-1f2ea5d8-38b8-4551-
 
 ## Screen Views
 
-![View 1](https://drive.google.com/uc?id=1ynfWqYIFEbBrGinCabGCoWmQ41ds7kPM)
+![view-1](https://user-images.githubusercontent.com/75661314/149398941-57402716-597f-4bad-982e-4e7cbc008693.png)
 
-![View 2](https://drive.google.com/uc?id=1MRZ3VAUmWlGl2t3yIvKiMMj4TR7-iZau)
+![view-2](https://user-images.githubusercontent.com/75661314/149398950-8e033e24-f3a1-4d43-8b80-ac8ff554036c.png)
 
-![View 3](https://drive.google.com/uc?id=12ku2vh4aGHhjrG2fetLd-Plf7Ymcw8QQ)
+![view-3](https://user-images.githubusercontent.com/75661314/149398954-90f238f0-949c-47ea-952a-2ed327d7ce0a.png)
 
-![View 4](https://drive.google.com/uc?id=1aSHBw1j3Mly3kK9z3tF-o-U66NPtS1tW)
+![view-4](https://user-images.githubusercontent.com/75661314/149398960-461ce281-06bc-4433-adc8-cabde06b1507.png)
 
-![View 5](https://drive.google.com/uc?id=1MWMmTqML_yxPr_WIzu6rV1WrxdjXqAD_)
+![view-5](https://user-images.githubusercontent.com/75661314/149398966-dc94fc3a-7d6b-4165-9a8a-e274a5c0d7eb.png)
 
 ## Requirements
 
