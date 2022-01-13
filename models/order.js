@@ -28,9 +28,6 @@ const Order = sequelize.define('order', {
         type: DataTypes.DATEONLY,
         allowNull: false,
         defaultValue: DataTypes.NOW
-    },
-    deliveryDate: {
-        type: DataTypes.DATEONLY
     }
 }, {
     initialAutoIncrement: 1000000,

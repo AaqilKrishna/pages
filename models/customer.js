@@ -46,21 +46,6 @@ const Customer = sequelize.define('customer', {
         validate: {
             notEmpty: true
         }
-    },
-    locality: {
-        type: DataTypes.STRING
-    },
-    pincode: {
-        type: DataTypes.INTEGER
-    },
-    city: {
-        type: DataTypes.STRING
-    },
-    state: {
-        type: DataTypes.STRING
-    },
-    country: {
-        type: DataTypes.STRING
     }
 });
 

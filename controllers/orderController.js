@@ -7,7 +7,7 @@ const Book = require('../models/book');
 
 module.exports.order = (req, res) => {
     Order.findAll({
-            attributes: ['id', 'ISBN', 'quantity', 'completion', 'paymentMode', 'paymentDate', 'deliveryDate'],
+            attributes: ['id', 'ISBN', 'quantity', 'completion', 'paymentMode', 'paymentDate'],
             where: {
                 customerId: req.user.id
             },

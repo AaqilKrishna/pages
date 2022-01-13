@@ -31,7 +31,7 @@
                     <p class="order-title"><%= order.title %></p>
                 </a>
                 <p>Quantity: <%= order.quantity %> </p>
-                <p>Total: ₹<%= order.price %> </p>
+                <p>Total: ₹<%= (order.price).toFixed(2) %> </p>
                 <p><%= order.paymentMode %> </p>
                 <p>Order Placed: <%= order.paymentDate %></p>
             </div>
