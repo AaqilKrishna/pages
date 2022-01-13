@@ -73,7 +73,7 @@ sequelize.sync({
     })
     .then(() => {
         return app.listen(port, () => {
-            console.log(`Ecommerce app listening at http://${host}:${port}`);
+            console.log(`App listening at http://${host}:${port}`);
         });
     })
     .catch(err => console.log(err));
