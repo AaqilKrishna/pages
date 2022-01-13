@@ -5,7 +5,7 @@ Bookstore app built with Express.js and MySQL!!
 
 ## Demo
 
-https://user-images.githubusercontent.com/75661314/149397497-da49e295-b6f2-45ca-9209-283de9ae123c.mp4
+https://user-images.githubusercontent.com/75661314/149398249-1f2ea5d8-38b8-4551-b8c9-af48286e9e04.mp4
 
 ## Screen Views
 
