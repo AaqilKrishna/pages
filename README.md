@@ -1,18 +1,23 @@
+
 # Pages Bookstore Express App
 
 Bookstore app built with Express.js and MySQL!!
 
-## Sample Images
+## Demo
 
-![alt text](https://drive.google.com/uc?id=1ynfWqYIFEbBrGinCabGCoWmQ41ds7kPM)
+https://user-images.githubusercontent.com/75661314/149397497-da49e295-b6f2-45ca-9209-283de9ae123c.mp4
 
-![alt text](https://drive.google.com/uc?id=1MRZ3VAUmWlGl2t3yIvKiMMj4TR7-iZau)
+## Screen Views
 
-![alt text](https://drive.google.com/uc?id=12ku2vh4aGHhjrG2fetLd-Plf7Ymcw8QQ)
+![View 1](https://drive.google.com/uc?id=1ynfWqYIFEbBrGinCabGCoWmQ41ds7kPM)
 
-![alt text](https://drive.google.com/uc?id=1aSHBw1j3Mly3kK9z3tF-o-U66NPtS1tW)
+![View 2](https://drive.google.com/uc?id=1MRZ3VAUmWlGl2t3yIvKiMMj4TR7-iZau)
 
-![alt text](https://drive.google.com/uc?id=1MWMmTqML_yxPr_WIzu6rV1WrxdjXqAD_)
+![View 3](https://drive.google.com/uc?id=12ku2vh4aGHhjrG2fetLd-Plf7Ymcw8QQ)
+
+![View 4](https://drive.google.com/uc?id=1aSHBw1j3Mly3kK9z3tF-o-U66NPtS1tW)
+
+![View 5](https://drive.google.com/uc?id=1MWMmTqML_yxPr_WIzu6rV1WrxdjXqAD_)
 
 ## Requirements
 
@@ -21,7 +26,7 @@ Bookstore app built with Express.js and MySQL!!
 
 ## Usage
 
-1. Fork the repo and clone it.
+1. Fork the repository and clone it.
 
 2. Create a MySQL database.
 
