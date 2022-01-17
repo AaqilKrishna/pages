@@ -1,7 +1,7 @@
 
 # Pages Bookstore Express App
 
-Bookstore app built with Express.js and MySQL!!
+Online bookstore app built with Express.js and MySQL!!
 
 ## Demo
 
