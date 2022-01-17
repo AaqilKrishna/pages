@@ -47,7 +47,7 @@ module.exports.create = (req, res) => {
                                 return Customer.create(req.body)
                                     .then(() => {
                                         req.flash('success', 'Registered');
-                                        return res.redirect('login');
+                                        return res.redirect('sign-in');
                                     })
                                     .catch(err => console.log(err));
                             }
