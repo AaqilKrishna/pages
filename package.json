@@ -4,7 +4,7 @@
   "description": "Ecommerce website built with Express.js and MySQL",
   "main": "app.js",
   "scripts": {
-    "start": "node index",
+    "start": "node app",
     "dev": "nodemon index"
   },
   "repository": {
